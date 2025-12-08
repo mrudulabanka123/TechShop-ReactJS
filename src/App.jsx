@@ -1,17 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Carousel from "react-bootstrap/Carousel";
+import { Header } from "./Components/Header";
 
-function App() {
- 
-
+export const App = () => {
   return (
     <>
-    
-     <div> Project: Boat  </div>
-    </>
-  )
-}
+      <Header />
 
-export default App
+      <Carousel>
+        
+      </Carousel>
+    </>
+  );
+};
