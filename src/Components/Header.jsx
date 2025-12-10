@@ -1,25 +1,25 @@
 import { Link } from "react-router-dom";
 
-export const Header = () => {
+export const Header = ({ openLogin }) => {
   return (
-    <nav className="d-flex justify-content-between align-items-center px-4 py-3 bg-dark">
-     <b><Link className="text-light" to="/" style={{textDecorationLine:"none",fontSize:"24px"}}>Tech-Shop</Link></b> 
+    <header>
+      <nav className="navbar navbar-dark bg-dark px-4">
+        <Link className="navbar-brand fw-bold" to="/">Tech-Shop</Link>
 
-      <div className="d-flex gap-4 fs-5">
-        <Link  className="text-light" >
-          <i className="fa-solid fa-magnifying-glass"></i>
-        </Link>
+        <div className="d-flex align-items-center gap-4">
+          <Link to="/search" className="text-white fs-5">
+            <i className="fa-solid fa-magnifying-glass"></i>
+          </Link>
 
-        <Link className="text-light" to="/cart">
-          <i className="fa-solid fa-cart-shopping"></i>
-        </Link>
+          <Link to="/cart" className="text-white fs-5">
+            <i className="fa-solid fa-cart-shopping"></i>
+          </Link>
 
-        <Link className="text-light" to="/login">
-          <i className="fa-regular fa-user"></i>
-        </Link>
-      </div>
-    </nav>
+          <span className="text-white fs-5" style={{ cursor: "pointer" }} onClick={openLogin}>
+            <i className="fa-regular fa-user"></i>
+          </span>
+        </div>
+      </nav>
+    </header>
   );
 };
-
-
